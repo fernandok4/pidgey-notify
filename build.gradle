@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.22'
 }
 
 group = 'br.com.kanasha.pidgey'
@@ -10,10 +10,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.kafka:kafka-clients:3.2.0'
-    implementation 'org.springframework.kafka:spring-kafka:2.8.6'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.7'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.22"
+    implementation 'org.apache.kafka:kafka-clients:3.3.1'
+    implementation 'org.springframework.kafka:spring-kafka:2.9.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
@@ -22,9 +24,9 @@ test {
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = '1.8'
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 compileTestKotlin {
-    kotlinOptions.jvmTarget = '1.8'
+    kotlinOptions.jvmTarget = "1.8"
 }
